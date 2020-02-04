@@ -5,11 +5,11 @@ import { initialState, todoReducer } from '../reducers';
 const Todo = () => {
 
     const [state, dispatch] = useReducer(todoReducer, initialState);
-    const [todo, setTodo] = useState('hey');
 
     return (
         <div>
-            <p>{state.item}</p>
+            <div>{state.item}</div>
+            <div>{state.id}</div>
         </div>
     )
 }
