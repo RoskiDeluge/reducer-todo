@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
+import Todo from './components/Todo';
 
 function App() {
   return (
     <div className="App">
-      <h1>My Husserl Todo App</h1>
-      <TodoForm />
-      <TodoList />
+      <h1>My Todo App</h1>
+      <Todo />
     </div>
   );
 }
