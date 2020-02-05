@@ -16,6 +16,7 @@ export const toDoReducer = (state, action) => {
         completed: !state.completed
       };
     case "ADD_TASK":
+      // I tried to return an object, but I needed to return an array, as below
       // return {
       //   ...state,
       //   item: action.payload,
@@ -28,21 +29,6 @@ export const toDoReducer = (state, action) => {
         id: Date.now()
       };
       return { ...state, items: [...state.items, newTodo] };
-
-    // {
-    //     ...state,
-    //     item: action.payload,
-    //     completed: false,
-    //     id: Date.now()
-    // };
-
-    // return state.map(item => {
-    //     return {
-    //         item: action.payload,
-    //         completed: false,
-    //         id: new Date()
-    //     }
-    // })
     default:
       return state;
   }
