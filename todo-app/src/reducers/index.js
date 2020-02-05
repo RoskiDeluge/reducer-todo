@@ -1,4 +1,5 @@
 export const initialState = {
+  //Important to put arrays within the state object, which are then accessible via dot notation
   items: [
     {
       item: "Learn about reducers",
@@ -16,7 +17,7 @@ export const toDoReducer = (state, action) => {
         completed: !state.completed
       };
     case "ADD_TASK":
-      // I tried to return an object, but I needed to return an array, as below
+      // I tried to return an object direclty, but I needed to return an array within the state object, as below
       // return {
       //   ...state,
       //   item: action.payload,

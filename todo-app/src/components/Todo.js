@@ -52,11 +52,11 @@ const Todo = () => {
         />
         <button onClick={handleUpdateItem}>Add Task</button>
       </div>
-      <ul>
+      <div>
         {state.items.map(todo => {
-          return <li>{todo.item}</li>;
+          return <div>{todo.item}</div>;
         })}
-      </ul>
+      </div>
     </div>
   );
 };
