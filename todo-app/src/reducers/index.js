@@ -1,3 +1,4 @@
+
 export const initialState = {
   //Important to put arrays within the state object, which are then accessible via dot notation
   items: [
@@ -31,13 +32,16 @@ export const toDoReducer = (state, action) => {
           console.log("rd: TOGGLE_TASK item", item);
           console.log("rd: item.completed ", item.completed)
           console.log("rd: action.payload", action.payload)
-          if (item.id === action.payload ) {
+          if (item.completed === action.payload ) {
             return {
               ...item,
               completed: !item.completed
             }
           }
-          return item
+          return {
+            ...item,
+            completed: !item.completed
+          }
         })
       }
     } 

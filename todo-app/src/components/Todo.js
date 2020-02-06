@@ -20,8 +20,7 @@ const Todo = () => {
   };
 
   const handleToggleItem = e => {
-    e.preventDefault();
-    dispatch({ type: "TOGGLE_TASK", payload: state.items.completed });
+    dispatch({ type: "TOGGLE_TASK", payload: true });
     console.log("rd: handleToggleItem: ", state);
   };
 
@@ -38,10 +37,10 @@ const Todo = () => {
       </div>
       <div>
         {state.items.map(todo => {
-          console.log(todo.completed)
+          console.log(todo.id)
           return (
-            <div onClick={handleToggleItem} className={todo.completed ? "strike" : "no"}>
-              {todo.item}
+            <div className={todo.completed ? "strike" : "no"}>
+              <div onClick={handleToggleItem}>{todo.item}</div>
             </div>
           );
         })}
