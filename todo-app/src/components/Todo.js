@@ -40,7 +40,7 @@ const Todo = () => {
           console.log(todo.id)
           return (
             <div className={todo.completed ? "strike" : "no"}>
-              <div onClick={handleToggleItem}>{todo.item}</div>
+              <div className="item" onClick={handleToggleItem}>{todo.item}</div>
             </div>
           );
         })}
