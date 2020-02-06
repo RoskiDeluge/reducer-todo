@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from "react";
 import { initialState, toDoReducer } from "../reducers";
+import "./Todo.css";
 
 const Todo = () => {
   const [state, dispatch] = useReducer(toDoReducer, initialState);
@@ -18,31 +19,14 @@ const Todo = () => {
     // console.log(state.items);
   };
 
+  const handleToggleItem = e => {
+    e.preventDefault();
+    dispatch({ type: "TOGGLE_TASK", payload: state.items.completed });
+    console.log("rd: handleToggleItem: ", state);
+  };
+
   return (
     <div>
-      {/* <button onClick={handleAdd}>
-        Add item
-      </button>
-      {!state.completed ? (
-        <h2>{state.item}</h2>
-      ) : (
-        <div>
-          <h2>{state.item}</h2>
-          <input
-            type="text"
-            name="newItemText"
-            value={newTaskText}
-            onChange={handleChanges}
-          />
-          <button onClick={handleUpdateItem}>Add Task</button>
-          <div>
-                {state.toDoReducer.map(todo => {
-                return todo.item
-                })}   
-        </div>
-        </div>
-      )} */}
-
       <div>
         <input
           type="text"
@@ -54,7 +38,12 @@ const Todo = () => {
       </div>
       <div>
         {state.items.map(todo => {
-          return <div>{todo.item}</div>;
+          console.log(todo.completed)
+          return (
+            <div onClick={handleToggleItem} className={todo.completed ? "strike" : "no"}>
+              {todo.item}
+            </div>
+          );
         })}
       </div>
     </div>
