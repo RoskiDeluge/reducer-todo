@@ -6,10 +6,6 @@ const Todo = () => {
   const [state, dispatch] = useReducer(toDoReducer, initialState);
   const [newTodo, setNewTodo] = useState("");
 
-  //   const handleAdd = e => {
-  //     dispatch({ type: "TOGGLE_ADD" });
-  //   };
-
   const handleChanges = e => {
     setNewTodo(e.target.value);
   };
@@ -24,6 +20,10 @@ const Todo = () => {
     // console.log(e.target);
   };
 
+  const handleClearItem = todoid => {
+    dispatch({ type: "FILTER_TASK", payload: todoid });
+  }
+
   return (
     <div>
       <div>
@@ -34,6 +34,7 @@ const Todo = () => {
           onChange={handleChanges}
         />
         <button onClick={handleUpdateItem}>Add Task</button>
+        <button onClick={handleClearItem}>Clear Task</button>
       </div>
       <div>
         {state.items.map(todo => {
