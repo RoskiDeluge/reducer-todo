@@ -38,7 +38,6 @@ const Todo = () => {
       </div>
       <div>
         {state.items.map(todo => {
-          // console.log("rd: state.items.map, todo.id ", todo.id)
           return (
             <div onClick={() => handleToggleItem(todo.id)} className={todo.completed ? "strike" : "no"}>
               <div className="item">{todo.item}</div>

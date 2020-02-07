@@ -1,4 +1,3 @@
-
 export const initialState = {
   //Important to put arrays within the state object, which are then accessible via dot notation
   items: [
