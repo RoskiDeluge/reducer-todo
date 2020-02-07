@@ -15,12 +15,12 @@ const Todo = () => {
     // console.log(state.items);
   };
 
-  const handleToggleItem = todoid => {
+  const handleToggleItem = (todoid) => {
     dispatch({ type: "TOGGLE_TASK", payload: todoid });
     // console.log(e.target);
   };
 
-  const handleClearItem = todoid => {
+  const handleClearItem = (todoid) => {
     dispatch({ type: "FILTER_TASK", payload: todoid });
   }
 
