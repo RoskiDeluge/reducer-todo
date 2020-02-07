@@ -21,7 +21,7 @@ const Todo = () => {
 
   const handleToggleItem = e => {
     dispatch({ type: "TOGGLE_TASK", payload: true });
-    console.log("rd: handleToggleItem: ", state);
+    console.log("rd: handleToggleItem: state ", state);
   };
 
   return (
@@ -37,13 +37,13 @@ const Todo = () => {
       </div>
       <div>
         {state.items.map(todo => {
-          console.log(todo.id)
+          console.log("rd: state.items.map, todo.id ", todo.id)
           return (
-            <div className={todo.completed ? "strike" : "no"}>
-              <div className="item" onClick={handleToggleItem}>{todo.item}</div>
+            <div onClick={handleToggleItem} className={todo.completed ? "strike" : "no"}>
+              <div className="item">{todo.item}</div>
             </div>
           );
-        })}
+        })} 
       </div>
     </div>
   );
