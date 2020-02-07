@@ -30,9 +30,9 @@ export const toDoReducer = (state, action) => {
         ...state,
         items: state.items.map(item => {
           console.log("rd: TOGGLE_TASK item", item);
-          console.log("rd: item.completed ", item.completed)
-          console.log("rd: action.payload", action.payload)
-          if (item.completed === action.payload ) {
+          // console.log("rd: item.completed ", item.completed)
+          // console.log("rd: action.payload", action.payload)
+          if (item.id === action.payload ) {
             return {
               ...item,
               completed: !item.completed
@@ -40,7 +40,6 @@ export const toDoReducer = (state, action) => {
           }
           return {
             ...item,
-            completed: !item.completed
           }
         })
       }

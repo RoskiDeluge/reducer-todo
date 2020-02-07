@@ -14,14 +14,14 @@ const Todo = () => {
     setNewTodo(e.target.value);
   };
 
-  const handleUpdateItem = e => {
+  const handleUpdateItem = () => {
     dispatch({ type: "ADD_TASK", payload: newTodo });
     // console.log(state.items);
   };
 
-  const handleToggleItem = e => {
-    dispatch({ type: "TOGGLE_TASK", payload: true });
-    console.log("rd: handleToggleItem: state ", state);
+  const handleToggleItem = todoid => {
+    dispatch({ type: "TOGGLE_TASK", payload: todoid });
+    // console.log(e.target);
   };
 
   return (
@@ -37,9 +37,9 @@ const Todo = () => {
       </div>
       <div>
         {state.items.map(todo => {
-          console.log("rd: state.items.map, todo.id ", todo.id)
+          // console.log("rd: state.items.map, todo.id ", todo.id)
           return (
-            <div onClick={handleToggleItem} className={todo.completed ? "strike" : "no"}>
+            <div onClick={() => handleToggleItem(todo.id)} className={todo.completed ? "strike" : "no"}>
               <div className="item">{todo.item}</div>
             </div>
           );
