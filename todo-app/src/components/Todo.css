@@ -1,0 +1,21 @@
+.item {
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 2rem;
+    background-color: aquamarine;
+    border-radius: .5rem;
+    width: 10rem;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.strike {
+    text-decoration: line-through;
+    color: blue;
+}
+
+.no {
+    font-weight: bold;
+}   
